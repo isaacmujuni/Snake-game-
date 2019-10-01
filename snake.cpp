@@ -65,9 +65,8 @@ void Draw()
     mvaddch(fruitY + 1, fruitX + 1, 'F');
     mvaddch(y + 1, x + 1, '0');
 
-    cout << "Score:" << score << endl;
-
-
+    mvprintw(height + 2, 0, "Score: %d", score);
+    refresh();
 }
 void setDirection(eDirection next)
 {
