@@ -10,6 +10,7 @@ bool gameOver;
 const int width = 20;
 const int height = 20;
 bool wrapWalls = false;
+const int tickMs = 120;
 std::vector<int> tailX(width * height + 1), tailY(width * height + 1);
 int nTail;
 int x, y, fruitX, fruitY, score;
@@ -166,7 +167,7 @@ int main()
         Draw();
         Input();
         Logic();
-        Sleep(10);
+        napms(tickMs);
     }
     endwin();
     return 0;
