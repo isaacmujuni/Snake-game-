@@ -77,9 +77,6 @@ void setDirection(eDirection next)
 }
 
 void Input()
-
-{
-if (kbhit())
 {
     switch(getch())
     {
@@ -100,7 +97,6 @@ if (kbhit())
     break;
 
     }
-}
 }
 void Logic ()
 {
@@ -163,6 +159,7 @@ int main()
     cbreak();
     noecho();
     curs_set(0);
+    nodelay(stdscr, TRUE);
     Setup();
     while (!gameOver)
     {
