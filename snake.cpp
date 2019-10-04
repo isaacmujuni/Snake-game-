@@ -85,15 +85,19 @@ void Input()
         switch (key)
         {
         case 'a':
+        case KEY_LEFT:
             setDirection(LEFT);
             break;
         case 'd':
+        case KEY_RIGHT:
             setDirection(RIGHT);
             break;
         case 'w':
+        case KEY_UP:
             setDirection(UP);
             break;
         case 's':
+        case KEY_DOWN:
             setDirection(DOWN);
             break;
         case 'x':
@@ -164,6 +168,7 @@ int main()
     noecho();
     curs_set(0);
     nodelay(stdscr, TRUE);
+    keypad(stdscr, TRUE);
     Setup();
     while (!gameOver)
     {
