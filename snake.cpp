@@ -79,24 +79,27 @@ void setDirection(eDirection next)
 
 void Input()
 {
-    switch(getch())
+    int key;
+    while ((key = getch()) != ERR)
     {
-    case 'a':
-    setDirection(LEFT);
-    break;
-     case 'd':
-    setDirection(RIGHT);
-    break;
-     case 'w':
-    setDirection(UP);
-    break;
-     case 's':
-    setDirection(DOWN);
-    break;
-    case 'x':
-    gameOver = true;
-    break;
-
+        switch (key)
+        {
+        case 'a':
+            setDirection(LEFT);
+            break;
+        case 'd':
+            setDirection(RIGHT);
+            break;
+        case 'w':
+            setDirection(UP);
+            break;
+        case 's':
+            setDirection(DOWN);
+            break;
+        case 'x':
+            gameOver = true;
+            break;
+        }
     }
 }
 void Logic ()
