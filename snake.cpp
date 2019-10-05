@@ -85,18 +85,22 @@ void Input()
         switch (key)
         {
         case 'a':
+        case 'A':
         case KEY_LEFT:
             setDirection(LEFT);
             break;
         case 'd':
+        case 'D':
         case KEY_RIGHT:
             setDirection(RIGHT);
             break;
         case 'w':
+        case 'W':
         case KEY_UP:
             setDirection(UP);
             break;
         case 's':
+        case 'S':
         case KEY_DOWN:
             setDirection(DOWN);
             break;
