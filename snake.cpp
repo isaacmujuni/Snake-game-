@@ -1,6 +1,7 @@
 #include <cstdlib>
 #include <ctime>
 #include <iostream>
+#include <random>
 #include <conio.h>
 #include <windows.h>
 
@@ -13,6 +14,9 @@ int nTail;
 int x, y, fruitX, fruitY, score;
 enum eDirection {STOP = 0, LEFT, RIGHT, UP, DOWN};
 eDirection dir;
+
+std::mt19937 rng(static_cast<unsigned>(std::time(nullptr)));
+int randomCell(int limit) { return std::uniform_int_distribution<int>(0, limit - 1)(rng); }
 
 void Setup()
 {
