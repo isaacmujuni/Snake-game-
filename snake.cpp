@@ -151,8 +151,8 @@ break;
 if (x == fruitX && y == fruitY)
 {
     score +=10;
-     fruitX = rand() % width;
-    fruitY = rand() % height;
+    fruitX = randomCell(width);
+    fruitY = randomCell(height);
     nTail++;
 }
 }
