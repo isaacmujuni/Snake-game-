@@ -41,11 +41,11 @@ void Draw()
         {
             if (j == 0)
                 cout << "\xDB";
-                if (i == y && j == x)
+            else if (i == y && j == x)
                 cout << "0";
-                else if(i == fruitY && j == fruitX)
+            else if (i == fruitY && j == fruitX)
                 cout << "F";
-                else
+            else
                 {
                      bool print = false;
                     for (int k = 0; k < nTail; k++)
