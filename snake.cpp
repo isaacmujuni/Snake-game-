@@ -39,7 +39,7 @@ void Draw()
     {
         for (int j = 0; j < width+2; j++)
         {
-            if (j == 0)
+            if (j == 0 || j == width + 1)
                 cout << "\xDB";
             else if (i == y && j == x)
                 cout << "0";
@@ -62,9 +62,6 @@ void Draw()
                         cout << " ";
 
                 }
-
-            if (j == width-1)
-                cout << "\xDB";
         }
         cout << endl;
     }
