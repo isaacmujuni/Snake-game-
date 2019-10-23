@@ -25,6 +25,7 @@ void Setup()
     dir = STOP;
     x = width /2;
     y = height /2;
+    nTail = 0;
     fruitX = randomCell(width);
     fruitY = randomCell(height);
     score = 0;
