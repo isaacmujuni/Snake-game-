@@ -2,6 +2,7 @@
 #include <ctime>
 #include <iostream>
 #include <random>
+#include <vector>
 #include <conio.h>
 #include <windows.h>
 
@@ -9,7 +10,7 @@ using namespace std;
 bool gameOver;
 const int width = 20;
 const int height = 20;
-int tailX[100], tailY[100];
+std::vector<int> tailX(width * height + 1), tailY(width * height + 1);
 int nTail;
 int x, y, fruitX, fruitY, score;
 enum eDirection {STOP = 0, LEFT, RIGHT, UP, DOWN};
