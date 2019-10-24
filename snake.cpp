@@ -76,6 +76,14 @@ void Draw()
 
 
 }
+void setDirection(eDirection next)
+{
+    bool reversing = (dir == LEFT && next == RIGHT) || (dir == RIGHT && next == LEFT) ||
+                     (dir == UP && next == DOWN) || (dir == DOWN && next == UP);
+    if (!reversing)
+        dir = next;
+}
+
 void Input()
 
 {
