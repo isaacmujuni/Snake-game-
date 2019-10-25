@@ -19,6 +19,14 @@ eDirection dir;
 std::mt19937 rng(static_cast<unsigned>(std::time(nullptr)));
 int randomCell(int limit) { return std::uniform_int_distribution<int>(0, limit - 1)(rng); }
 
+bool cellOccupied(int cx, int cy)
+{
+    if (cx == x && cy == y) return true;
+    for (int i = 0; i < nTail; i++)
+        if (tailX[i] == cx && tailY[i] == cy) return true;
+    return false;
+}
+
 void Setup()
 {
     gameOver = false;
