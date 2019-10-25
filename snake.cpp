@@ -92,16 +92,16 @@ if (kbhit())
     switch(getch())
     {
     case 'a':
-    dir = LEFT;
+    setDirection(LEFT);
     break;
      case 'd':
-    dir = RIGHT;
+    setDirection(RIGHT);
     break;
      case 'w':
-    dir = UP;
+    setDirection(UP);
     break;
      case 's':
-    dir = DOWN;
+    setDirection(DOWN);
     break;
     case 'x':
     gameOver = true;
