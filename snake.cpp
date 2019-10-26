@@ -42,8 +42,7 @@ void Setup()
     x = width /2;
     y = height /2;
     nTail = 0;
-    fruitX = randomCell(width);
-    fruitY = randomCell(height);
+    placeFruit();
     score = 0;
 }
 void Draw()
@@ -175,8 +174,7 @@ break;
 if (x == fruitX && y == fruitY)
 {
     score +=10;
-    fruitX = randomCell(width);
-    fruitY = randomCell(height);
+    placeFruit();
     nTail++;
 }
 }
