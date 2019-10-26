@@ -27,6 +27,14 @@ bool cellOccupied(int cx, int cy)
     return false;
 }
 
+void placeFruit()
+{
+    if (nTail + 1 >= width * height)
+        return;
+    do { fruitX = randomCell(width); fruitY = randomCell(height); }
+    while (cellOccupied(fruitX, fruitY));
+}
+
 void Setup()
 {
     gameOver = false;
