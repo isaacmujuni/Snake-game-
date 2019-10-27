@@ -10,6 +10,7 @@ using namespace std;
 bool gameOver;
 const int width = 20;
 const int height = 20;
+bool wrapWalls = false;
 std::vector<int> tailX(width * height + 1), tailY(width * height + 1);
 int nTail;
 int x, y, fruitX, fruitY, score;
@@ -161,8 +162,8 @@ void Logic ()
 break;
 }
 
- // if (x > width || x < 0 || y > height || y < 0)
-    // gameOver = true;
+    if (!wrapWalls && (x >= width || x < 0 || y >= height || y < 0))
+        gameOver = true;
     if (x >= width) x = 0; else if (x < 0) x = width -1;
     if (y >= height) y = 0; else if (y < 0) y = height -1;
 
