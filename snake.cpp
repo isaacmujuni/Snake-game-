@@ -3,8 +3,7 @@
 #include <iostream>
 #include <random>
 #include <vector>
-#include <conio.h>
-#include <windows.h>
+#include <curses.h>
 
 using namespace std;
 bool gameOver;
