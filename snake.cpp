@@ -182,6 +182,10 @@ if (x == fruitX && y == fruitY)
 
 int main()
 {
+    initscr();
+    cbreak();
+    noecho();
+    curs_set(0);
     Setup();
     while (!gameOver)
     {
@@ -190,5 +194,6 @@ int main()
         Logic();
         Sleep(10);
     }
+    endwin();
     return 0;
 }
