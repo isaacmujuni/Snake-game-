@@ -56,34 +56,8 @@ void Draw()
 
     for (int i = 0; i < height; i++)
     {
-        for (int j = 0; j < width+2; j++)
-        {
-            int boardX = j - 1;
-            if (j == 0 || j == width + 1)
-                cout << "\xDB";
-            else if (i == y && boardX == x)
-                cout << "0";
-            else if (i == fruitY && boardX == fruitX)
-                cout << "F";
-            else
-                {
-                     bool print = false;
-                    for (int k = 0; k < nTail; k++)
-                    {
-
-                        if (tailX[k] == boardX && tailY[k] == i)
-                        {
-                           cout << "o";
-                           print = true;
-                        }
-
-                    }
-                     if (!print)
-                        cout << " ";
-
-                }
-        }
-        cout << endl;
+        mvaddch(i + 1, 0, '#');
+        mvaddch(i + 1, width + 1, '#');
     }
 
     cout << "Score:" << score << endl;
