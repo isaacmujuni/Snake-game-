@@ -47,10 +47,12 @@ void Setup()
 }
 void Draw()
 {
-    system("cls");
-    for (int i = 0; i < width+2; i++)
-        cout << "\xDB";
-    cout << endl;
+    erase();
+    for (int i = 0; i < width + 2; i++)
+    {
+        mvaddch(0, i, '#');
+        mvaddch(height + 1, i, '#');
+    }
 
     for (int i = 0; i < height; i++)
     {
@@ -84,9 +86,6 @@ void Draw()
         cout << endl;
     }
 
-    for (int i = 0; i < width+2; i++)
-        cout << "\xDB";
-    cout << endl;
     cout << "Score:" << score << endl;
 
 
