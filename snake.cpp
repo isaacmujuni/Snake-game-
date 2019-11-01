@@ -60,6 +60,11 @@ void Draw()
         mvaddch(i + 1, width + 1, '#');
     }
 
+    for (int k = 0; k < nTail; k++)
+        mvaddch(tailY[k] + 1, tailX[k] + 1, 'o');
+    mvaddch(fruitY + 1, fruitX + 1, 'F');
+    mvaddch(y + 1, x + 1, '0');
+
     cout << "Score:" << score << endl;
 
 
