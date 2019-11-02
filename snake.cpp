@@ -12,7 +12,6 @@ const int height = 20;
 bool wrapWalls = false;
 const int tickMs = 120;
 const int keyEscape = 27;
-bool paused = false;
 std::vector<int> tailX(width * height + 1), tailY(width * height + 1);
 int nTail;
 int x, y, fruitX, fruitY, score;
@@ -68,7 +67,7 @@ void Draw()
     mvaddch(fruitY + 1, fruitX + 1, 'F');
     mvaddch(y + 1, x + 1, '0');
 
-    mvprintw(height + 2, 0, "Score: %d%s", score, paused ? "   [PAUSED]" : "");
+    mvprintw(height + 2, 0, "Score: %d", score);
     refresh();
 }
 void setDirection(eDirection next)
@@ -105,10 +104,6 @@ void Input()
         case 'S':
         case KEY_DOWN:
             setDirection(DOWN);
-            break;
-        case 'p':
-        case 'P':
-            paused = !paused;
             break;
         case 'x':
         case 'X':
@@ -191,8 +186,7 @@ int main()
     {
         Draw();
         Input();
-        if (!paused)
-            Logic();
+        Logic();
         napms(tickMs);
     }
     endwin();
