@@ -170,6 +170,12 @@ if (x == fruitX && y == fruitY)
 }
 
 
+void gameOverScreen()
+{
+    mvprintw(height + 3, 0, "Game Over!  Final score: %d", score);
+    refresh();
+}
+
 int main()
 {
     initscr();
