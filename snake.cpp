@@ -195,6 +195,10 @@ int main()
         Logic();
         napms(tickMs);
     }
+    gameOverScreen();
+    nodelay(stdscr, FALSE);
+    timeout(-1);
+    getch();
     endwin();
     return 0;
 }
