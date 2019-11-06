@@ -170,10 +170,14 @@ if (x == fruitX && y == fruitY)
 }
 
 
-void gameOverScreen()
+bool gameOverScreen()
 {
-    mvprintw(height + 3, 0, "Game Over!  Final score: %d", score);
+    mvprintw(height + 3, 0, "Game Over!  Final score: %d  Play again? (y/n)", score);
     refresh();
+    nodelay(stdscr, FALSE);
+    timeout(-1);
+    int key = getch();
+    return key == 'y' || key == 'Y';
 }
 
 int main()
@@ -187,18 +191,17 @@ int main()
 #ifdef NCURSES_VERSION
     set_escdelay(25);
 #endif
-    Setup();
-    while (!gameOver)
-    {
-        Draw();
-        Input();
-        Logic();
-        napms(tickMs);
-    }
-    gameOverScreen();
-    nodelay(stdscr, FALSE);
-    timeout(-1);
-    getch();
+    do {
+        nodelay(stdscr, TRUE);
+        Setup();
+        while (!gameOver)
+        {
+            Draw();
+            Input();
+            Logic();
+            napms(tickMs);
+        }
+    } while (gameOverScreen());
     endwin();
     return 0;
 }
