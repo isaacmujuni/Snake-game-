@@ -32,7 +32,11 @@ bool cellOccupied(int cx, int cy)
 void placeFruit()
 {
     if (nTail + 1 >= width * height)
+    {
+        fruitX = -1;
+        fruitY = -1;
         return;
+    }
     do { fruitX = randomCell(width); fruitY = randomCell(height); }
     while (cellOccupied(fruitX, fruitY));
 }
@@ -164,8 +168,13 @@ break;
 if (x == fruitX && y == fruitY)
 {
     score +=10;
-    placeFruit();
     nTail++;
+    if (nTail > 1)
+    {
+        tailX[nTail - 1] = prevX;
+        tailY[nTail - 1] = prevY;
+    }
+    placeFruit();
 }
 }
 
