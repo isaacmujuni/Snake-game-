@@ -176,13 +176,16 @@ if (x == fruitX && y == fruitY)
         tailY[nTail - 1] = prevY;
     }
     placeFruit();
+    if (fruitX < 0)
+        gameOver = true;
 }
 }
 
 
 bool gameOverScreen()
 {
-    mvprintw(height + 3, 0, "Game Over!  Final score: %d  Play again? (y/n)", score);
+    mvprintw(height + 3, 0, "%s  Final score: %d  Play again? (y/n)",
+             fruitX < 0 ? "You Win!" : "Game Over!", score);
     refresh();
     nodelay(stdscr, FALSE);
     timeout(-1);
