@@ -3,6 +3,7 @@
 #include <iostream>
 #include <random>
 #include <vector>
+#include <cstring>
 #include <curses.h>
 
 using namespace std;
@@ -193,8 +194,10 @@ bool gameOverScreen()
     return key == 'y' || key == 'Y';
 }
 
-int main()
+int main(int argc, char **argv)
 {
+    if (argc > 1 && std::strcmp(argv[1], "--wrap") == 0)
+        wrapWalls = true;
     initscr();
     cbreak();
     noecho();
